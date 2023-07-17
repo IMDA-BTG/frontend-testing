@@ -15,7 +15,9 @@ const database = mongoClient.db('aiverify')
 const models = database.collection('modelfilemodels')
 const datasets = database.collection('datasetmodels')
 
-const ENDPOINT = "http://localhost:3000"
+const ENDPOINT = "http://127.0.0.1:3000"
+
+const baseDir = process.env.BASEDIR ?? "/app/portal"
 
 test.describe.configure({ mode: 'serial' });
 
@@ -55,12 +57,12 @@ test.describe('Get Report', () => {
                 "projectId": projectID,
                 "algorithms": "aiverify.stock.algorithms.fairness_metrics_toolbox_for_classification:fairness_metrics_toolbox_for_classification",
                 "modelAndDatasets": {
-                    "modelFileName": "/app/portal/uploads/model/pickle_scikit_multiclasslr_loan_2.sav",
+                    "modelFileName": baseDir + "/uploads/model/pickle_scikit_multiclasslr_loan_2.sav",
                     "groundTruthColumn": "Interest_Rate",
-                    "groundTruthDatasetFileName": "/app/portal/uploads/data/pickle_pandas_tabular_loan_testing_3.sav",
-                    "modelFileName": "/app/portal/uploads/model/pickle_scikit_multiclasslr_loan_2.sav",
+                    "groundTruthDatasetFileName": baseDir + "/uploads/data/pickle_pandas_tabular_loan_testing_3.sav",
+                    //"modelFileName": "/app/portal/uploads/model/pickle_scikit_multiclasslr_loan_2.sav",
                     "modelType": "Classification",
-                    "testDatasetFileName": "/app/portal/uploads/data/pickle_pandas_tabular_loan_testing_1.sav"
+                    "testDatasetFileName": baseDir + "/uploads/data/pickle_pandas_tabular_loan_testing_1.sav"
                 }
             }
         })

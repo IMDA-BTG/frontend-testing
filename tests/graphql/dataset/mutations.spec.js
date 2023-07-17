@@ -13,7 +13,7 @@ const mongoClient = new MongoClient(uri)
 const database = mongoClient.db('aiverify')
 const datasets = database.collection('datasetmodels')
 
-const ENDPOINT = "http://localhost:3000"
+const ENDPOINT = "http://127.0.0.1:3000"
 
 test.describe.configure({ mode: 'serial' });
 

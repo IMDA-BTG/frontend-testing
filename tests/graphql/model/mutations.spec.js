@@ -7,7 +7,7 @@ import fs from 'fs'
 import FormData from 'form-data'
 import { setTimeout } from "timers/promises"
 
-const ENDPOINT = "http://localhost:3000"
+const ENDPOINT = "http://127.0.0.1:3000"
 
 const uri =
     "mongodb://mongodb:mongodb@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1";
